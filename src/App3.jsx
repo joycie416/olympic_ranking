@@ -9,12 +9,12 @@ function App() {
   const [gold, setGold] = useState(0);
   const [silver, setSilver] = useState(0);
   const [bronze, setBronze] = useState(0);
-  const [row, setRow] = useState({
-    country: country,
-    gold: gold,
-    silver: silver,
-    bronze: bronze,
-  })
+  // const [row, setRow] = useState({
+  //   country: country,
+  //   gold: gold,
+  //   silver: silver,
+  //   bronze: bronze,
+  // })
 
   const [data, setData] = useState([]);
 
@@ -24,7 +24,7 @@ function App() {
 
     // state를 업데이트하는 방법 : 비동기로 (최원장 튜터님)
     const newRow = {country:country, gold:gold, silver:silver, bronze:bronze};
-    setRow(newRow);
+    // setRow(newRow);
     // console.log('new Row :', row);
 
     if (country.trim() === '') {
@@ -193,8 +193,7 @@ const SaveData = ({data, setData}) => {
     } else {
       alert('데이터를 불러왔습니다.');
 
-      loaded = JSON.parse(loaded);
-      setData(loaded)
+      setData(JSON.parse(loaded))
     }
   }
 
