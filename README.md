@@ -2,6 +2,8 @@
 
 올림픽 경기 결과를 직접 입력하면 메달 순위에 맞게 정렬해줍니다. React와 vite를 사용해 구현했습니다.
 
+URL : https://olympic-ranking.vercel.app/
+
 <img src="./images/main.png">
 
 ### 제공하는 기능
