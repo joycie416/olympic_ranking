@@ -21,7 +21,7 @@ const Olympic = ({children}) => {
     // state를 업데이트하는 방법 : 비동기로 (최원장 튜터님)
     const newRow = {country:country, gold:gold, silver:silver, bronze:bronze};
     // setRow(newRow);
-    // console.log('new Row :', row);
+    // console.log('new Row :', newRow);
 
     if (country.trim() === '') {
       alert('국가명을 입력해주세요');
@@ -31,10 +31,7 @@ const Olympic = ({children}) => {
       } else {
         setData(sortData([...data, newRow]));
         
-        document.getElementById('input_country').value = '';
-        document.getElementById('input_gold').value = 0;
-        document.getElementById('input_silver').value = 0;
-        document.getElementById('input_bronze').value = 0;
+        initialize();
       }
     }
   }
@@ -53,12 +50,24 @@ const Olympic = ({children}) => {
 
       setData(sortData([...data]));
       
-      document.getElementById('input_country').value = '';
-      document.getElementById('input_gold').value = 0;
-      document.getElementById('input_silver').value = 0;
-      document.getElementById('input_bronze').value = 0;
+      initialize();
+
+      // document.getElementById('input_country').value = '';
+      // document.getElementById('input_gold').value = 0;
+      // document.getElementById('input_silver').value = 0;
+      // document.getElementById('input_bronze').value = 0;
     }
 
+  }
+
+  const initialize = () => {
+    
+    document.getElementById('input_country').value = '';
+    document.getElementById('input_gold').value = 0;
+    document.getElementById('input_silver').value = 0;
+    document.getElementById('input_bronze').value = 0;
+  
+    setCountry('');
   }
 
   return (
@@ -87,7 +96,7 @@ const isIncluded = (data, newData) => {
 
 const sortData = (prevData) => {
   let data = [...prevData];
-  console.log('sortData :', data);
+  // console.log('sortData :', data);
   // 내림차순으로 정렬
   data.sort((data1, data2) => {
     if (Number(data1.gold) !== Number(data2.gold)) {
