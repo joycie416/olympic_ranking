@@ -10,7 +10,7 @@ html, body, #root {
   margin: 0;
   padding: 0;
 
-
+  overflow-x: auto; /* 가로 스크롤이 필요할 때 스크롤 가능하도록 설정 */
   font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -151,13 +151,16 @@ input[type=number]::-webkit-inner-spin-button {
   border-radius: 15px;
 
   margin: 10px 0 0 0;
+  
   overflow: hidden;
   
   position: relative;
-  overflow-y: scroll;
+  overflow: scroll;
 }
-
-
+/* 표 내부 스크롤바 안보이게 설정 */
+.table_container::-webkit-scrollbar {
+  display: none;
+}
 
 table {
   width: 100%;
