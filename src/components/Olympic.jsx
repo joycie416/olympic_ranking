@@ -68,6 +68,9 @@ const Olympic = ({children}) => {
     document.getElementById('input_bronze').value = 0;
   
     setCountry('');
+    setGold(0);
+    setSilver(0);
+    setBronze(0);
   }
 
   return (
